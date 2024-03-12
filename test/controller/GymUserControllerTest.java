@@ -12,29 +12,26 @@ class GymUserControllerTest {
     @Test
     @DisplayName("Test that a new gym user can be added")
     void addGymUserTest() {
-        GymUser gymUser = new GymUser( "Ben", 25, "075687665", "ben@gmail.com","Male");
         GymUserController gymUserController = new GymUserController();
         String message = "Gym User Added";
-        String result = gymUserController.addGymUser(gymUser);
+        String result = gymUserController.addGymUser("Ben", 25, "075687665", "ben@gmail.com","Male");
         assertEquals(message, result);
     }
 
     @Test
     @DisplayName("Test that a user with in the age bracket can be added")
     void addGymUserWithInAgeBracketTest() {
-        GymUser gymUser = new GymUser( "Ben", 25, "075687665", "ben@gmail.com","Male");
         GymUserController gymUserController = new GymUserController();
         String message = "Gym User Added";
-        String result = gymUserController.addGymUser(gymUser);
+        String result = gymUserController.addGymUser("Ben", 25, "075687665", "ben@gmail.com","Male");
         assertEquals(message, result);
     }
     @Test
     @DisplayName("Test that an underage user can not register")
     void underAgeUserCanNotRegisterTest() {
-        GymUser gymUser = new GymUser( "Ben", 17, "075687665", "ben@gmail.com","Male");
         GymUserController gymUserController = new GymUserController();
         String message = "You are outside the age bracket";
-        String result = gymUserController.addGymUser(gymUser);
+        String result = gymUserController.addGymUser("Ben", 17, "075687665", "ben@gmail.com","Male");
         assertEquals(message, result);
     }
     @Test
@@ -42,7 +39,7 @@ class GymUserControllerTest {
     void nullPropertyShouldNotBeSavedTest() {
         GymUserController gymUserController = new GymUserController();
         String message = "user can not be empty";
-        String result = gymUserController.addGymUser(null);
+        String result = gymUserController.addGymUser(null, 25, null, null,null);
         assertEquals(message, result);
     }
 
