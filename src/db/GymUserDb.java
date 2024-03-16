@@ -5,19 +5,19 @@ import model.GymUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GymUserDatabase {
-    private List<GymUser> gymUsers;
+public class GymUserDb {
+    private final List<GymUser> gymUsers;
 
-    private static GymUserDatabase instance ;
+    private static GymUserDb instance ;
 
-    public static GymUserDatabase getInstance() {
+    public static GymUserDb getInstance() {
         if (instance == null) {
-            instance = new GymUserDatabase();
+            instance = new GymUserDb();
         }
         return instance;
     }
 
-    private GymUserDatabase() {
+    private GymUserDb() {
         gymUsers = new ArrayList<>();
     }
 
@@ -28,6 +28,7 @@ public class GymUserDatabase {
         return gymUsers;
     }
     public GymUser getGymUserByEmail(String email) {
+
         for (GymUser gymUser : gymUsers) {
             if (gymUser.getEmail().equalsIgnoreCase(email)) {
                 return gymUser;

@@ -64,4 +64,8 @@ public class GymUser {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    public String toString(){
+        return "Name: " + name + " Age: " + age + " Phone Number: " + phoneNumber + " Email: " + email + " Gender: " + gender;
+    }
 }

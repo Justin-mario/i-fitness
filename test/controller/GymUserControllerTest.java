@@ -27,7 +27,7 @@ class GymUserControllerTest {
         assertEquals(message, result);
     }
     @Test
-    @DisplayName("Test that an underage user can not register")
+    @DisplayName("Test that an underage user can not registerUser")
     void underAgeUserCanNotRegisterTest() {
         GymUserController gymUserController = new GymUserController();
         String message = "You are outside the age bracket";
